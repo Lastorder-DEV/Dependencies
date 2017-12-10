@@ -3,6 +3,7 @@ pushd %VCPKG%
   REM Install vcpkg
   IF NOT EXIST %VCPKG%\.git (
     git clone -q https://github.com/Microsoft/vcpkg.git .
+    git checkout 50f6bc4e8f103c695f8754962dde0be03e32cbc5 .
     call .\bootstrap-vcpkg.bat
   )
   git pull
